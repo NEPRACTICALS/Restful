@@ -61,25 +61,39 @@ exports.getBookById = async (req, res) => {
 
 // function to  update book by id 
 
-exports.updateBookById = async (req, res) => {
-  const bookId = req.params.id;
-  const updatedData = req.body; // Assuming the updated employee data is in the request body
 
-  try {
-    const book = await Book.findByPk(bookId);
+ exports.updateBookById = async (req, res) => {
+   const bookId = req.params.id;
+   const { name, author, email, publisher, publicationYear, subject } =
+     req.body; // Destructure specific fields from req.body
 
-    if (!book) {
-      return res.status(404).json({ message: "Book not found" });
-    }
+   try {
+     // Find the book by its ID
+     const book = await Book.findByPk(bookId);
 
-    await book.update(updatedData);
+     // If the book is not found, return a 404 status with an appropriate message
+     if (!book) {
+       return res.status(404).json({ message: "Book not found" });
+     }
 
-    res.status(200).json(book);
-  } catch (error) {
-    console.error("Error updating book:", error);
-    res.status(500).json({ message: "Internal server error" });
-  }
-};
+     // Update the book with the specific fields
+     await book.update({
+       name,
+       author,
+       email,
+       publisher,
+       publicationYear,
+       subject
+     });
+
+     // Send a success response with the updated book data
+     res.status(200).json(book);
+   } catch (error) {
+     console.error("Error updating book:", error);
+     // If there is an error, send a 500 status with an appropriate message
+     res.status(500).json({ message: "Internal server error" });
+   }
+ };
 
 // function to delete book by id 
 

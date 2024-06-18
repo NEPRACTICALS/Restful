@@ -235,6 +235,33 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "author": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "publisher": {
+                  "example": "any"
+                },
+                "publicationYear": {
+                  "example": "any"
+                },
+                "subject": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
