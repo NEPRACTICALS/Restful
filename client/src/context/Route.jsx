@@ -3,6 +3,8 @@
 import PropTypes from "prop-types";
 import { Navigate } from "react-router-dom";
 
+// specifying private routes that  requires token if not first login
+
 export const PrivateRoute = ({ element: Component, ...rest }) => {
   const hasToken = !!localStorage.getItem("token"); // Check if token exists in local storage
 

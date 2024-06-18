@@ -1,5 +1,5 @@
 
-
+// Books model which takes name, author , publisher , publicationYear , subject from frontend and return book which are string s
 
 const { DataTypes } = require("sequelize");
 const sequelize = require("../middleware/sequelize");

@@ -1,5 +1,7 @@
 const Joi = require('joi')
 
+
+// validations of the book 
 function validateBook(book) {
     const bookSchema = Joi.object({
       name: Joi.string().required(),

@@ -1,6 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import NotFound from "./components/NotFound";
-import Employee from "./pages/Book";
+
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
@@ -8,7 +8,7 @@ import { AuthProvider } from "./context/AuthContext";
 import { RecoilRoot } from "recoil";
 import { Toaster } from "react-hot-toast";
 import Book from "./pages/Book";
-
+// Application Routes 
 function App() {
   return (
     <Router>

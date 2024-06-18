@@ -14,6 +14,8 @@ const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
 };
 
+
+/// login function that takes email, password and if logged in successfully token is set in headers
 const Login = () => {
   const { login } = useAuth();
 

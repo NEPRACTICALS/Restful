@@ -1,3 +1,5 @@
+// middle ware to check if user is authenticated check if in headers there is a token if not return error and if token is not valid return error
+
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 

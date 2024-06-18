@@ -3,6 +3,7 @@ const { AuthRoutes} = require("./AuthRoutes");
 const auth = require("../middleware/auth");
 const { BookRoutes } = require("./BookRoutes");
 
+// routes of th whole app 
 
 const router  = Router()
 

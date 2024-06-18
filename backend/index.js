@@ -22,14 +22,15 @@ var options = {
   explore: true
 };
 
+// using json in body 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(router);
+// accessing swagger in browser 
  app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
-// Use routes
-// app.use(userRoutes);
+
 
 
 app.use("/", (req, res) => {

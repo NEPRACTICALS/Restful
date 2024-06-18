@@ -1,8 +1,10 @@
-
+// BOOK CONTROLLER 
 
 const { Op } = require("sequelize");
 const Book = require("../models/Book");
 const { validate } = require("../utils/BookValidation");
+
+// Function to create Books which takes name,author,email,publisher,publicationYear,subject from frontend and return book
 
 exports.createBook = async (req, res) => {
   const { error } = validate(req.body);
@@ -27,6 +29,8 @@ exports.createBook = async (req, res) => {
   }
 };
 
+// function to get book all books 
+
 exports.getAllBooks = async (req, res) => {
   try {
     const books = await Book.findAll();
@@ -36,6 +40,9 @@ exports.getAllBooks = async (req, res) => {
     res.status(500).send("An error occurred while fetching books");
   }
 };
+
+
+// function to get book by id 
 
 exports.getBookById = async (req, res) => {
   const bookId = req.params.id;
@@ -51,6 +58,8 @@ exports.getBookById = async (req, res) => {
     res.status(500).send("An error occurred while fetching the book");
   }
 };
+
+// function to  update book by id 
 
 exports.updateBookById = async (req, res) => {
   const bookId = req.params.id;
@@ -71,6 +80,8 @@ exports.updateBookById = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
+// function to delete book by id 
 
 exports.deleteBookById = async (req, res) => {
   const bookId = req.params.id;

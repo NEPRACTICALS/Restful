@@ -1,11 +1,14 @@
 
-
+// student Controller 
 
 const jwt = require("jsonwebtoken");
 const password_complexity = require("joi-password-complexity");
 const bcryptjs = require("bcryptjs");
 const Student = require("../models/Student");
 const { validate } = require("../utils/StudentValidation");
+
+
+// function to create student with firstName, lastName, email, password and return user  it has  hashing password 
 
 exports.createUser = async (req, res) => {
   console.log("called")
@@ -49,6 +52,9 @@ exports.createUser = async (req, res) => {
     res.status(500).send("An error occurred while creating the user");
   }
 };
+
+// function to login student with email and password and return token
+
 
 exports.loginUser = async (req, res, next) => {
   try {

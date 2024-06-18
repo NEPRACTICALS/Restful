@@ -17,6 +17,8 @@ const onFinishFailed = (errorInfo) => {
 const SignUp = () => {
   const { signup } = useAuth();
 
+
+  // function to create user with firstName,  lastName  email and password
   const createUser = async (event) => {
     event.preventDefault();
 

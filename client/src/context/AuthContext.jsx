@@ -17,12 +17,16 @@ export const AuthProvider = (props) => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // check if the token is available if not first login 
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token && protectedRoutes.includes(location.pathname)) {
       navigate("/login");
     }
   }, [location.pathname]);
+
+  // function to login  the user which takes email & password and if logged in successfully token is set in headers 
 
   const login = async (email, password) => {
     try {
@@ -56,6 +60,9 @@ export const AuthProvider = (props) => {
     }
   };
 
+  // function to sign up user with firstName, lastName ,email,Password 
+  
+
   const signup = async (firstName , lastName ,email, password) => {
     try {
       const response = await axios.post(
@@ -71,6 +78,9 @@ export const AuthProvider = (props) => {
     }
   };
 
+
+  // logout function whick also removed the token 
+  
   const logout = () => {
     localStorage.removeItem("token");
     setUser(null);

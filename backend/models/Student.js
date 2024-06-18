@@ -1,4 +1,5 @@
 
+// Student model  which takes firstName, lastName, email password and return student 
 
 const { DataTypes, Model } = require("sequelize");
 const jwt = require("jsonwebtoken");

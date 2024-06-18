@@ -1,4 +1,6 @@
 // axiosInstance.js
+
+// axios connecting to the database 
 import _ from "axios";
 
 const axios = _.create({
