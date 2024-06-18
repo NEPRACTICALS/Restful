@@ -16,7 +16,6 @@ exports.createBook = async (req, res) => {
     const book = await Book.create({
       name: req.body.name,
       author: req.body.author,
-      email: req.body.email,
       publisher: req.body.publisher,
       publicationYear: req.body.publicationYear,
       subject: req.body.subject
