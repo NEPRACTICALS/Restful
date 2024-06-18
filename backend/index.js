@@ -13,6 +13,8 @@ const {router}  =  require ("./routes")
 // const employeeRoutes = require("./routes/employeeRoutes"); // Assuming you have employee routes
 const swaggerUi = require("swagger-ui-express");
 const swaggerFile = require("./swagger-output.json");
+const morgan  = require("morgan");
+
 // const SwaggerDocument = require("./swagger/swagger.json");
 
 // app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(SwaggerDocument));
@@ -26,6 +28,7 @@ var options = {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.json());
+app.use(morgan('tiny'))
 app.use(router);
 // accessing swagger in browser 
  app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));

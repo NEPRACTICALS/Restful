@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
 import { AiFillAliwangwang } from "react-icons/ai";
@@ -21,7 +22,7 @@ const SideBar = () => {
       style={{ gridColumn: "1/2", gridRow: "1/3" }}
       className="flex items-center pt-[3rem]  flex-col  p-5"
     >
-      <h1>User Management</h1>
+      <h1>Book Management</h1>
       <div className="h-full  w-full flex items-center justify-center pt-8">
         <ul className="space-y-2 font-medium  flex flex-col h-full w-full  justify-start ">
           {navigation.map((item, index) => {
